@@ -79,4 +79,5 @@ app.use((err, req, res, next) => {
 });
 app.listen(8080, ()=>{
     console.log("server start");
+    console.log(process.env.SECRET);
 });
