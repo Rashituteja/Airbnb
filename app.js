@@ -17,7 +17,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/User.js");
 const session = require("express-session");
-const mongoStrore = require ("connect-mongo");
+const MongoStore = require("connect-mongo");
 const userRoutes = require("./routes/user.js");
 const MONGO_URL = process.env.MONGO_URL;
 main().then(()=>{
@@ -36,17 +36,17 @@ app.set("views",path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
-const store = mongoStrore.create({
+const store = MongoStore.create({
   mongoUrl: MONGO_URL,
   crypto:{
-    secret:"yourSecretKey"
-  },
+    secret:process.env.SECRET
+    },
   touchAfter:24*3600
 })
 
 const sessionConfig = {
   store,
-  secret: "yourSecretKey", 
+  secret:process.env.SECRET, 
   resave: false,
   saveUninitialized: true,
   cookie: {
