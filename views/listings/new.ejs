@@ -1,0 +1,48 @@
+<% layout('layouts/boilerplate') %>
+<body>
+  <div class="row">
+    <div class="col-8 offset-2">
+
+    <form method="POST" action="/listings" enctype="multipart/form-data" >
+   
+      <div class="mb-2">
+      <lable for="title" class="form-lable">Title</lable>
+      <input name="listing[title]" placeholder="enter title" type="text" class="form-control"/>
+    </div>
+      
+
+    <div class="mb-2" >
+      <lable for="description" class="form-lable">description</lable>
+    <textarea name="listing[description]" placeholder="enter description"class="form-control"></textarea>
+    </div>
+
+
+<div class="mb-2">
+  <label for="imageUrl" class="form-label">Image URL</label>
+ <input name="image" type="file" class="form-control"/>
+
+</div>
+    <br><br/>
+    <div class="mb-2">
+  <label for="price" class="form-lable">price</lable>
+      <input name="listing[price]" placeholder="enter price"class="form-control"/>
+    </div>
+    
+
+  <div class="mb-2">
+    <lable for="country" class="form-lable">country</lable>
+    <input name="listing[country]" placeholder="enter country"class="form-control"/>
+  </div>
+
+  <div class="mb-2">
+      <lable for="location" class="form-lable">location</lable>
+<input name="listing[location]" placeholder="enter location"class="form-control"/>
+  </div>
+  
+  <br><br/>
+<button class="btn btn-dark">Add</button>
+    </form>
+    
+    </div>
+  </div>
+</body>

@@ -1,0 +1,59 @@
+/* Increase height of comment textarea */
+#comment {
+    height: 8rem;
+    /* Adjust as needed */
+}
+.navbar{
+    height:5rem;
+    background-color: white;
+}
+
+.fa-compass{
+    color:red;
+    font-size: 2rem;
+}
+.card{
+    border:none !important;
+    margin-bottom:2rem;
+
+}
+
+.card-img-top{
+    border-radius: 1rem;
+    object-fit: cover;
+width: 100%;
+}
+
+.card-text p{
+   font-weight: 400;
+
+}
+
+.show-img{
+    height: 40vh;
+}
+
+button, .btn {
+    height: 3rem;
+    /* Adjust as needed */
+}
+
+.card-review {
+  border-radius: 10px;
+  background-color: #fdfdfd;
+
+  border: 1px solid black;
+}
+
+.card-review {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.card-text {
+  color: #555;
+}
