@@ -19,7 +19,7 @@ const User = require("./models/User.js");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const userRoutes = require("./routes/user.js");
-const MONGO_URL = process.env.MONGO_URL;
+const MONGO = process.env.MONGO_URL;
 main().then(()=>{
     console.log("connected to db");
 })
@@ -28,7 +28,7 @@ main().then(()=>{
 });
 
 async function main (){
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(MONGO);
 }
 app.use(express.urlencoded({extended:true}));
 app.set("view engine", "ejs");
@@ -37,7 +37,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 const store = MongoStore.create({
-  mongoUrl: MONGO_URL,
+  mongoUrl: MONGO,
   crypto:{
     secret:process.env.SECRET
     },
